@@ -4,6 +4,7 @@
 //! `vector_mul`との違い。
 
 use directx_shader_translate::spirv_gen::translate_shader;
+use directx_shader_translate::OPENCUDA_VULKAN_DISPATCH_KERNEL_NAME;
 use opencuda_core::{alloc_buffer, CompiledKernel, GpuDevice, KernelArg, LaunchConfig};
 use opencuda_vulkan::VulkanDevice;
 
@@ -54,7 +55,7 @@ fn dxbc_vector_div_matches_cpu_reference_on_real_vulkan_hardware() {
     // vector_mul/vector_sub_boundedテストと同じ理由でこの名前を再利用する。
     // 実行される演算はSPIR-Vバイト列側で決まる)。
     let spirv_bytes: Vec<u8> = kernel.spirv_words.iter().flat_map(|w| w.to_le_bytes()).collect();
-    let compiled = CompiledKernel::spirv("vector_add", kernel.entry_point, spirv_bytes);
+    let compiled = CompiledKernel::spirv(OPENCUDA_VULKAN_DISPATCH_KERNEL_NAME, kernel.entry_point, spirv_bytes);
 
     device
         .launch_kernel(
