@@ -742,3 +742,7 @@ pwsh tools/compile-dxbc-shaders.ps1
   project (which runs DirectX shaders **on non-Windows targets**).
 - [aruaru-llm](https://github.com/aon-co-jp/aruaru-llm) — no direct
   technical dependency on this project (verified, not assumed).
+
+---
+
+作者 / Author: 石塚正浩（MASAHIRO ISHIZUKA） (https://github.com/aon-co-jp)
