@@ -9,6 +9,6 @@ members = [
 [workspace.package]
 version      = "0.1.0"
 edition      = "2021"
-authors      = ["石塚正浩（MASAHIRO ISHIZUKA）"]
+authors      = ["石 塚 正 浩（MASAHIRO ISHIZUKA）"]
 license      = "MIT"
 repository   = "https://github.com/aon-co-jp/open-directx"
