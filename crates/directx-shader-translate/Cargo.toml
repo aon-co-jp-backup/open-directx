@@ -25,8 +25,8 @@ thiserror = "1"
 # (`gather_u8_avx2`)に使う。sibling-repo-under-`F:\runo`規約
 # (`aruaru-db`の`rust-json`/`aruaru-llm`の`open-cpu`と同じ)、この
 # クレートは`open-cuda`と違い2階層深い(`open-directx/crates/
-# directx-shader-translate/`)ため`../../../open-cpu`。
-open-cpu = { path = "../../../open-cpu" }
+# directx-shader-translate/`)ため`../../../open-cpu`だった(2026-10-18、単体clone可能にするためgit依存へ変更)。
+open-cpu = { git = "https://github.com/aon-co-jp/open-cpu" }
 
 [dev-dependencies]
 # open-cudaへのcross-repo path依存(aruaru-dbのopen_raid_z_coreパターンに準拠)。
